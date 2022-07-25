@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  mariadb:
+    container_name: mariadb
+    image: mariadb:latest
+    restart: always
+    environment:
+      MARIADB_USER: mariadbuser
+      MARIADB_PASSWORD: mariadbuserpassword
+      MARIADB_ROOT_PASSWORD: mariadbrootpassword
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./init-script.sql:/docker-entrypoint-initdb.d/init-script.sql
