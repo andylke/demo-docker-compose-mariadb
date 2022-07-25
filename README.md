@@ -19,7 +19,7 @@
  - Container mariadb                            Started                                                                                                                                  2.6s
 ```
 
-`docker compose logs mysql --follow`
+`docker compose logs mariadb --follow`
 
 ```
 mariadb  | 2022-07-25 07:27:42+00:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/init-script.sql
@@ -45,10 +45,9 @@ mariadb  | 2022-07-25  7:27:44 0 [Note] mariadbd: ready for connections.
 mariadb  | Version: '10.8.3-MariaDB-1:10.8.3+maria~jammy'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
 ```
 
-`mysql -h localhost -P 3306 -u mariadbuser -pmariadbuserpassword -e "select * from demo.demo_table"`
+`mariadb -h localhost -P 3306 -u mariadbuser -pmariadbuserpassword -e "select * from demo.demo_table"`
 
 ```
-mysql: [Warning] Using a password on the command line interface can be insecure.
 +----+------+
 | id | text |
 +----+------+
